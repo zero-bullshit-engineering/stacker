@@ -24,6 +24,8 @@ defmodule StackerWeb do
       import Plug.Conn
       import StackerWeb.Gettext
       alias StackerWeb.Router.Helpers, as: Routes
+
+      plug Stacker.Test
     end
   end
 
