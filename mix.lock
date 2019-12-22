@@ -23,4 +23,7 @@
   "postgrex": {:hex, :postgrex, "0.15.3", "5806baa8a19a68c4d07c7a624ccdb9b57e89cbc573f1b98099e3741214746ae4", [:mix], [{:connection, "~> 1.0", [hex: :connection, repo: "hexpm", optional: false]}, {:db_connection, "~> 2.1", [hex: :db_connection, repo: "hexpm", optional: false]}, {:decimal, "~> 1.5", [hex: :decimal, repo: "hexpm", optional: false]}, {:jason, "~> 1.0", [hex: :jason, repo: "hexpm", optional: true]}], "hexpm"},
   "ranch": {:hex, :ranch, "1.7.1", "6b1fab51b49196860b733a49c07604465a47bdb78aa10c1c16a3d199f7f8c881", [:rebar3], [], "hexpm"},
   "telemetry": {:hex, :telemetry, "0.4.1", "ae2718484892448a24470e6aa341bc847c3277bfb8d4e9289f7474d752c09c7f", [:rebar3], [], "hexpm"},
+  "telemetry_metrics": {:hex, :telemetry_metrics, "0.3.1", "799e7a3e40ebe740df265346dd1f5ff3e3c3e285f1436cd51fc8ac3b2bb7a772", [:mix], [{:telemetry, "~> 0.4", [hex: :telemetry, repo: "hexpm", optional: false]}], "hexpm"},
+  "telemetry_metrics_prometheus_core": {:hex, :telemetry_metrics_prometheus_core, "0.2.2", "c75a99f68a03dd2a4061cd333e3c4728971fada798c2e096f6bca067e15b402c", [:mix], [{:telemetry, "~> 0.4", [hex: :telemetry, repo: "hexpm", optional: false]}, {:telemetry_metrics, "~> 0.3", [hex: :telemetry_metrics, repo: "hexpm", optional: false]}], "hexpm"},
+  "telemetry_poller": {:hex, :telemetry_poller, "0.4.1", "50d03d976a3b8ab4898d9e873852e688840df47685a13af90af40e1ba43a758b", [:rebar3], [{:telemetry, "~> 0.4", [hex: :telemetry, repo: "hexpm", optional: false]}], "hexpm"},
 }
