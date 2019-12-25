@@ -25,7 +25,7 @@ defmodule StackerWeb do
       import StackerWeb.Gettext
       alias StackerWeb.Router.Helpers, as: Routes
 
-      plug Stacker.Test
+      plug ZerobsStack.LoadShedPlug
     end
   end
 
