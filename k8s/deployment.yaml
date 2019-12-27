@@ -11,6 +11,7 @@ spec:
     metadata:
       labels:
         app: stacker
+        foo: bla
     spec:
       containers:
       - name: stacker
@@ -19,6 +20,11 @@ spec:
         ports:
           - containerPort: 4000
           - containerPort: 4444
+        env:
+          - name: DATABASE_URL
+            value: ecto://postgres:postgres@postgres/postgres
+          - name: SECRET_KEY_BASE
+            value: ZoIYBMEfwUxleUB+lC18tH7PYXkwo7NqJMvfDx7Bav4xyi0vS0VXnxcU6JgSHsq3
         readinessProbe:
           httpGet:
             path: /kubernetes/ready
