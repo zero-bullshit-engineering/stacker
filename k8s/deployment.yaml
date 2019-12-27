@@ -25,6 +25,8 @@ spec:
             value: ecto://postgres:postgres@postgres/postgres
           - name: SECRET_KEY_BASE
             value: ZoIYBMEfwUxleUB+lC18tH7PYXkwo7NqJMvfDx7Bav4xyi0vS0VXnxcU6JgSHsq3
+          - name: RELEASE_COOKIE
+            value: obu4pheet1joo9fe9chom0eusieyae2O
           - name: POD_IP
             valueFrom:
               fieldRef:
