@@ -7,6 +7,8 @@ defmodule StackerWeb.PageController do
   }
 
   def index(conn, _params) do
+    IO.inspect(Node.list())
+
     if FunWithFlags.enabled?(:new_greeting) do
       IO.puts("New greeting would be on")
     end

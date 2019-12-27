@@ -33,3 +33,20 @@ spec:
           httpGet:
             path: /kubernetes/ready
             port: 4444
+
+      initContainers:
+      - name: stacker-migration
+        image: stacker:latest
+        imagePullPolicy: Never
+        command: ["_build/prod/rel/stacker/bin/stacker", "eval", "Stacker.Release.migrate()"]
+
+        env:
+          - name: DATABASE_URL
+            value: ecto://postgres:postgres@postgres/postgres
+          - name: SECRET_KEY_BASE
+            value: ZoIYBMEfwUxleUB+lC18tH7PYXkwo7NqJMvfDx7Bav4xyi0vS0VXnxcU6JgSHsq3
+          - name: POD_IP
+            valueFrom:
+              fieldRef:
+                fieldPath: status.podIP
+          
