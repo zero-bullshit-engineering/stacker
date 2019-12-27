@@ -6,8 +6,22 @@ defmodule Stacker.Application do
   use Application
 
   def start(_type, _args) do
+    topologies = [
+      example: [
+        strategy: Cluster.Strategy.Kubernetes,
+        config: [
+          kubernetes_ip_lookup_mode: :pods,
+          mode: :ip,
+          kubernetes_selector: "cluster=stacker",
+          kubernetes_namespace: "default",
+          kubernetes_node_basename: "stacker"
+        ]
+      ]
+    ]
+
     # List all child processes to be supervised
     children = [
+      {Cluster.Supervisor, [topologies, [name: Stacker.ClusterSupervisor]]},
       # Start the Ecto repository
       Stacker.Repo,
       # Start the endpoint when the application starts
