@@ -18,3 +18,8 @@ spec:
         imagePullPolicy: Never
         ports:
           - containerPort: 4000
+          - containerPort: 4444
+        readinessProbe:
+          httpGet:
+            path: /kubernetes/ready
+            port: 4444
