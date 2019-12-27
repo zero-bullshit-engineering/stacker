@@ -43,7 +43,7 @@ defmodule Stacker.MixProject do
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
       {:plug_cowboy, "~> 2.0"},
-      {:zerobs_stack, ">= 0.0.0", path: "../zerobs_stack"}
+      {:zerobs_stack, ">= 0.0.0"}
     ]
   end
 
