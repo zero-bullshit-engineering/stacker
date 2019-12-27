@@ -31,6 +31,9 @@ config :fun_with_flags, :persistence,
   repo: Stacker.Repo
 
 config :fun_with_flags, :cache_bust_notifications, enabled: false
+
+config :zerobs_stack, health_checks: [{Stacker.Repo, :query, ["SELECT 1;"]}]
+
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
 import_config "#{Mix.env()}.exs"
