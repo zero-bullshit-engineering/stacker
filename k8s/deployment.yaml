@@ -11,7 +11,7 @@ spec:
     metadata:
       labels:
         app: stacker
-        cluster: stacker
+        cluster: zerobs-stack
     spec:
       containers:
       - name: stacker

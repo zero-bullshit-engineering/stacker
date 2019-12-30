@@ -30,7 +30,10 @@ config :fun_with_flags, :persistence,
   adapter: FunWithFlags.Store.Persistent.Ecto,
   repo: Stacker.Repo
 
-config :fun_with_flags, :cache_bust_notifications, enabled: false
+config :fun_with_flags, :cache_bust_notifications,
+  enabled: true,
+  adapter: FunWithFlags.Notifications.PhoenixPubSub,
+  client: ZerobsStack.PubSub
 
 config :zerobs_stack, health_checks: [{Stacker.Repo, :query, ["SELECT 0;"]}]
 

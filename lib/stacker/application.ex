@@ -12,9 +12,9 @@ defmodule Stacker.Application do
         config: [
           kubernetes_ip_lookup_mode: :pods,
           mode: :ip,
-          kubernetes_selector: "cluster=stacker",
+          kubernetes_selector: "cluster=zerobs-stack",
           kubernetes_namespace: "default",
-          kubernetes_node_basename: "stacker"
+          kubernetes_node_basename: "app"
         ]
       ]
     ]
@@ -22,6 +22,7 @@ defmodule Stacker.Application do
     # List all child processes to be supervised
     children = [
       {Cluster.Supervisor, [topologies, [name: Stacker.ClusterSupervisor]]},
+      {Phoenix.PubSub.PG2, name: ZerobsStack.PubSub},
       # Start the Ecto repository
       Stacker.Repo,
       # Start the endpoint when the application starts
